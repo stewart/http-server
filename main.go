@@ -4,6 +4,7 @@ import (
 	"flag"
 	"fmt"
 	"net/http"
+	"os"
 	"path/filepath"
 	"strconv"
 )
@@ -21,6 +22,7 @@ func main() {
 
 	if err != nil {
 		fmt.Printf("Error: %v", err)
+		os.Exit(1)
 	}
 
 	fmt.Printf("Static file server running at %s:%d.\n", *host, *port)
@@ -33,5 +35,6 @@ func main() {
 
 	if err != nil {
 		fmt.Printf("Error: %v", err)
+		os.Exit(1)
 	}
 }
