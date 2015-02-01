@@ -19,20 +19,17 @@ func main() {
 	flag.Parse()
 
 	root, err := filepath.Abs(*path)
-
 	if err != nil {
 		fmt.Printf("Error: %v", err)
 		os.Exit(1)
 	}
 
-	fmt.Printf("Static file server running at %s:%d.\n", *host, *port)
+	fmt.Printf("Static file server running at %s:%d, serving %s\n", *host, *port, *path)
 	fmt.Println("Ctrl-C to exit.")
 
-	err = http.ListenAndServe(
-		*host+":"+strconv.Itoa(*port),
-		http.FileServer(http.Dir(root)),
-	)
+	fileServer := http.FileServer(http.Dir(root))
 
+	err = http.ListenAndServe(*host+":"+strconv.Itoa(*port), fileServer)
 	if err != nil {
 		fmt.Printf("Error: %v", err)
 		os.Exit(1)
