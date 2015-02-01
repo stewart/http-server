@@ -12,7 +12,7 @@ With Go installed:
 
 ## Precompiled Binaries
 
-Thanks to the excellent [`gox`][] tool by [@mitchellh][], precompiled binaries
+Thanks to the excellent [gox][] tool by [@mitchellh][], precompiled binaries
 are available for Windows, Linux, OS X, FreeBSD, and NetBSD.
 
 To find them, check out the [Releases][] page.
