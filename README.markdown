@@ -10,6 +10,17 @@ With Go installed:
 
     $ go get github.com/stewart/http-server
 
+## Precompiled Binaries
+
+Thanks to the excellent [`gox`][] tool by [@mitchellh][], precompiled binaries
+are available for Windows, Linux, OS X, FreeBSD, and NetBSD.
+
+To find them, check out the [Releases][] page.
+
+[gox]: https://github.com/mitchellh/gox
+[@mitchellh]: https://twitter.com/mitchellh
+[Releases]: https://github.com/stewart/http-server/releases
+
 ## Usage
 
 Serving files from `./` on port `3000`:
@@ -41,7 +52,6 @@ Help:
 ## TODO
 
 - Better logging (ideally, per-request w/ timestamps + requested file path)
-- Precompiled binaries
 - SSL support?
 - Cache control?
 
